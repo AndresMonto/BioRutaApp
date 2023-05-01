@@ -2,7 +2,7 @@ export const environment = {
   production: false
 };
 
-const USER_CONTROLLER  = 'api/User/';
+const USER_CONTROLLER  = 'http://localhost:30635' + '/api/User/';
 
 export const Controllers = {
   User:{

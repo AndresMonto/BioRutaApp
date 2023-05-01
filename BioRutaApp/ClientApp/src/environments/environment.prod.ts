@@ -2,7 +2,8 @@ export const environment = {
   production: true
 };
 
-const USER_CONTROLLER  = 'api/User/';
+const USER_CONTROLLER  = 'https://webapibioruta.azurewebsites.net' + '/api/User/';
+
 
 export const Controllers = {
   User:{
