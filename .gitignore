@@ -365,3 +365,5 @@ FodyWeavers.xsd
 /AngularApp/.angular
 /AngularApp/dist
 /.angular
+/BioRutaApp/ClientApp/.angular
+/BioRutaApp/ClientApp/node_modules

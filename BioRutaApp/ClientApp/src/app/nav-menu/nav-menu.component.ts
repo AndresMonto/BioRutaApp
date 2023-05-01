@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-nav-menu',
@@ -6,9 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent {
+  @Input() IsAuth : boolean = false;
   isExpanded = false;
 
   collapse() {
+
     this.isExpanded = false;
   }
 

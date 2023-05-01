@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "BioRutaApp"
+  "defaultProject": "BioRutaApp",
+  "cli": {
+    "analytics": "1e6de325-bb14-42e4-8557-c10f8d901c35"
+  }
 }

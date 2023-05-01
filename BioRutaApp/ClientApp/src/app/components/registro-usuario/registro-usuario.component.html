@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header"><h2 class="card-title text-center">Registro Usuario</h2>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="Registrar(User)">
+      <input type="email" hidden>
+      <input type="password" hidden>
+      <div class="mb-4 form-floating">
+        <input type="text" placeholder="*" class="form-control" name="Name" [(ngModel)]="User.Name" >
+        <label class="form-label">Nombre</label>
+      </div>
+      <div class="mb-4 form-floating">
+        <input type="email" placeholder="*" class="form-control" name="Email" [(ngModel)]="User.Email" >
+        <label class="form-label">Correo</label>
+      </div>
+      <div class="mb-4 form-floating">
+        <input type="password" placeholder="*" class="form-control" name="Password" [(ngModel)]="User.Password">
+        <label class="form-label">Contraseña</label>
+      </div>
+      <div class="row justify-content-center">
+          <button class="btn btn-primary col-3">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>
