@@ -14,7 +14,7 @@ export class DataService {
 
     let httpHeader: HttpHeaders =  this.GetHeaders();
 
-    return this.http.get<T>(this.baseUrl + url, {
+    return this.http.get<T>(url, {
       headers: httpHeader,
       params: params
     });
@@ -24,7 +24,7 @@ export class DataService {
 
     let httpHeader: HttpHeaders =  this.GetHeaders();
 
-    return this.http.post<T>(this.baseUrl + url, data , {
+    return this.http.post<T>(url, data , {
       headers: httpHeader,
     });
   }
@@ -33,7 +33,7 @@ export class DataService {
 
     let httpHeader: HttpHeaders =  this.GetHeaders();
 
-    return this.http.put<T>(this.baseUrl + url, data , {
+    return this.http.put<T>(url, data , {
       headers: httpHeader,
     });
   }
@@ -42,7 +42,7 @@ export class DataService {
 
     let httpHeader: HttpHeaders =  this.GetHeaders();
 
-    return this.http.delete<T>(this.baseUrl + url, {
+    return this.http.delete<T>(url, {
       headers: httpHeader,
       params: params
     });

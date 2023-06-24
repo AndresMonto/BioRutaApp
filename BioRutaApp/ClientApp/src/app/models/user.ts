@@ -8,6 +8,7 @@ export class User extends BaseModel {
   Email: string;
   Password: string;
   RoleId: number;
+  Role: object
 
   constructor() {
     super();
@@ -15,5 +16,6 @@ export class User extends BaseModel {
     this.Email = "";
     this.Password = "";
     this.RoleId = 0;
+    this.Role = {};
   }
 }

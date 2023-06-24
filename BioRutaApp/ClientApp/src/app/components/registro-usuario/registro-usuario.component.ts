@@ -20,6 +20,7 @@ export class RegistroUsuarioComponent implements OnInit {
   }
 
   Registrar(User: User){
+    User.RoleId = 14;
     this.dataService.post<User>(Controllers.User.Create,User).subscribe({
       next: (v) => {
         if(v.Error){

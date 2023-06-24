@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { LoginComponent } from './components/login/login.component';
 import { ComponentsModule } from './components/components.module';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
@@ -20,8 +18,6 @@ import { AuthGuard } from './services/auth/auth-guard';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -30,8 +26,6 @@ import { AuthGuard } from './services/auth/auth-guard';
     RouterModule.forRoot([
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent, canActivate:[AuthGuard] },
-      { path: 'counter', component: CounterComponent, canActivate:[AuthGuard] },
-      { path: 'fetch-data', component: FetchDataComponent , canActivate:[AuthGuard] },
       { path: 'login', component: LoginComponent},
       { path: 'user-register', component: RegistroUsuarioComponent},
       { path: '**', redirectTo: '/home', pathMatch: 'full' },
