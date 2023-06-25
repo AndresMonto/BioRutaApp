@@ -1,32 +1,39 @@
-<div class="mt-5" style="display: flex; justify-content: center !important;">
-  <div class="card col-md-7">
-    <div class="card-header">
-      <h2 class="card-title text-center">Iniciar Sesión</h2>
-    </div>
-    <div class="card-body">
-      <form [formGroup]="formLogin">
-        <div class="mb-4 form-floating">
-          <input (keyup)="Clean()" type="email" placeholder="*" class="form-control" formControlName="Email" name="Email" [(ngModel)]="login.Email" >
-          <label class="form-label">Correo</label>
-        </div>
-        <div class="mb-4 form-floating">
-          <input (keyup)="Clean()" type="password" placeholder="*" class="form-control" formControlName="Password" name="Password" [(ngModel)]="login.Password" >
-          <label class="form-label">Contraseña</label>
-        </div>
-        <div *ngIf="!formLogin.valid"><p class="text-danger">*Debe ingresar un correo válido y una contraseña de almenos {{minLength}} caracteres</p></div>
-        <div><p class="text-danger" *ngIf="login.Error">{{login.Message}}</p></div>
-
-        <div class="d-flex justify-content-center"  *ngIf="loading">
-          <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
+<div class="auth-wrapper">
+	<div class="auth-content text-center">
+		<div class="card borderless">
+			<div class="row align-items-center ">
+				<div class="col-md-12">
+          <div class="card-header">
+            <div class="text-center">
+							<img class="card-img-top rounded" src="../assets/images/Ico.png" alt="Card image cap" style="width: 10rem;">
+						</div>
           </div>
-        </div>
+					<div class="card-body">
+            <form [formGroup]="formLogin">
+              <input type="email" hidden>
+              <input type="password" hidden>
 
-        <div class="row justify-content-center">
-            <button type="button" class="btn btn-primary col-6 col-md-3 me-md-3" (click)="SignIn()" [disabled]="!formLogin.valid || loading">Iniciar</button>
-            <div class="btn btn-secondary col-6 col-md-3" (click)="UserRegister()">Registarse</div>
-        </div>
-      </form>
-    </div>
-  </div>
+              <div class="form-group mb-3">
+                <input (keyup)="Clean()" type="email" class="form-control" id="Email" placeholder="Correo electrónico" formControlName="Email" name="Email" [(ngModel)]="Login.Email">
+              </div>
+              <div class="form-group mb-4">
+                <input (keyup)="Clean()" type="password" class="form-control" id="Password" placeholder="Contraseña" formControlName="Password" name="Password" [(ngModel)]="Login.Password">
+              </div>
+              <button class="btn btn-block btn-primary mb-4" (click)="SignIn()" [disabled]="!formLogin.valid || loading">Inicar sesión</button>
+              <div *ngIf="!formLogin.valid"><p class="text-danger">*Debe ingresar un Correo Cálido y una Contraseña de almenos {{minLength}} caracteres</p></div>
+              <div><p class="text-danger" *ngIf="Login.Error">{{Login.Message}}</p></div>
+
+              <div class="d-flex justify-content-center"  *ngIf="loading">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden" hidden>Loading...</span>
+                </div>
+              </div>
+              <hr>
+              <p class="mb-2 text-muted">Olvidé mi contraseña <a href="auth-reset-password.html" class="f-w-400">Recuperar</a></p>
+              <p class="mb-0 text-muted">No tengo cuenta <span (click)="UserRegister()" class="f-w-400">Crear</span></p>
+            </form>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

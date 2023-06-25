@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Login } from 'src/app/models/login';
+import { Login } from 'src/app/models/Login';
 import { DataService } from 'src/app/services/data.service';
 import { SecurityService } from 'src/app/services/security.service';
 import { Controllers } from 'src/environments/environment';
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   private subRef$: Subscription | undefined;
 
   constructor(
-     public login: Login,
+     public Login: Login,
      private formBuilder: FormBuilder,
      private dataService: DataService,
      private securityService: SecurityService,
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit, OnDestroy {
    }
 
   ngOnInit(): void {
-
+    this.Login =  new Login();
   }
 
   ngOnDestroy(): void {
@@ -44,14 +44,14 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   SignIn(){
     if(this.formLogin.valid){
-      this.login.Error = false;
+      this.Login.Error = false;
       this.loading = true;
 
-      this.subRef$ = this.dataService.post<Login>(Controllers.User.SignIn, this.login).subscribe({
+      this.subRef$ = this.dataService.post<Login>(Controllers.User.SignIn, this.Login).subscribe({
         next: (v) => {
           this.loading = false;
           if(v.Error){
-            this.login = v;
+            this.Login = v;
           }else{
             this.securityService.SetToken(v.Token);
             this.router.navigate(['/home']);
@@ -59,8 +59,8 @@ export class LoginComponent implements OnInit, OnDestroy {
         },
         error: (e) => {
           this.loading = false;
-          this.login.Error = true;
-          this.login.Message = e.message;
+          this.Login.Error = true;
+          this.Login.Message = e.message;
           console.error(e)
         },
       });
@@ -73,8 +73,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   Clean(){
-    this.login.Message = "";
-    this.login.Error = false;
+    this.Login.Message = "";
+    this.Login.Error = false;
   }
 
 }
