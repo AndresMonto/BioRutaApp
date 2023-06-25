@@ -13,8 +13,10 @@ export class AppComponent implements OnDestroy {
 
   constructor(private securityService: SecurityService){
     this.IsAuth = this.securityService.IsAuth;
+    console.log(this.IsAuth);
     this.subsAuth$ = this.securityService.authChange$.subscribe((isAuth) => {
       this.IsAuth = isAuth;
+      console.log(this.IsAuth);
     });
   }
 

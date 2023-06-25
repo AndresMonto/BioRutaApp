@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Controllers } from 'src/environments/environment';
-import { User } from '../models/user';
+import { User } from '../models/User';
 import { DataService } from '../services/data.service';
 
 @Component({
