@@ -17315,7 +17315,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  @    font-face {
+  @font-face {
         font-family: "Flaticon";
         src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
     }
@@ -22860,10 +22860,6 @@ pre[class*=language-]:before {
     background-repeat: no-repeat;
 }
 
-.doc-img.background-color.image > a[data-value="background-img-1"] {
-    background-image: url("../images/nav-bg/body-bg-1.jpg");
-}
-
 .doc-img.background-color.image > a[data-value="background-img-1"] > span:nth-child(1):after, .doc-img.background-color.image > a[data-value="background-img-1"] > span:nth-child(1):before {
     background: transparent;
 }
@@ -22874,10 +22870,6 @@ pre[class*=language-]:before {
 
 .doc-img.background-color.image > a[data-value="background-img-1"] > span:nth-child(2):after {
     background: linear-gradient(to bottom, transparent 20px, #e9e9e9 0%);
-}
-
-.doc-img.background-color.image > a[data-value="background-img-2"] {
-    background-image: url("../images/nav-bg/body-bg-2.jpg");
 }
 
 .doc-img.background-color.image > a[data-value="background-img-2"] > span:nth-child(1):after, .doc-img.background-color.image > a[data-value="background-img-2"] > span:nth-child(1):before {
@@ -22892,10 +22884,6 @@ pre[class*=language-]:before {
     background: linear-gradient(to bottom, transparent 20px, #e9e9e9 0%);
 }
 
-.doc-img.background-color.image > a[data-value="background-img-3"] {
-    background-image: url("../images/nav-bg/body-bg-3.jpg");
-}
-
 .doc-img.background-color.image > a[data-value="background-img-3"] > span:nth-child(1):after, .doc-img.background-color.image > a[data-value="background-img-3"] > span:nth-child(1):before {
     background: transparent;
 }
@@ -22906,10 +22894,6 @@ pre[class*=language-]:before {
 
 .doc-img.background-color.image > a[data-value="background-img-3"] > span:nth-child(2):after {
     background: linear-gradient(to bottom, transparent 20px, #e9e9e9 0%);
-}
-
-.doc-img.background-color.image > a[data-value="background-img-4"] {
-    background-image: url("../images/nav-bg/body-bg-4.jpg");
 }
 
 .doc-img.background-color.image > a[data-value="background-img-4"] > span:nth-child(1):after, .doc-img.background-color.image > a[data-value="background-img-4"] > span:nth-child(1):before {
@@ -22924,10 +22908,6 @@ pre[class*=language-]:before {
     background: linear-gradient(to bottom, transparent 20px, #e9e9e9 0%);
 }
 
-.doc-img.background-color.image > a[data-value="background-img-5"] {
-    background-image: url("../images/nav-bg/body-bg-5.jpg");
-}
-
 .doc-img.background-color.image > a[data-value="background-img-5"] > span:nth-child(1):after, .doc-img.background-color.image > a[data-value="background-img-5"] > span:nth-child(1):before {
     background: transparent;
 }
@@ -22938,10 +22918,6 @@ pre[class*=language-]:before {
 
 .doc-img.background-color.image > a[data-value="background-img-5"] > span:nth-child(2):after {
     background: linear-gradient(to bottom, transparent 20px, #e9e9e9 0%);
-}
-
-.doc-img.background-color.image > a[data-value="background-img-6"] {
-    background-image: url("../images/nav-bg/body-bg-6.jpg");
 }
 
 .doc-img.background-color.image > a[data-value="background-img-6"] > span:nth-child(1):after, .doc-img.background-color.image > a[data-value="background-img-6"] > span:nth-child(1):before {
@@ -24003,54 +23979,6 @@ body[class*='background-img-'] .pcoded-navbar.theme-horizontal ~ .pcoded-header[
     background-attachment: fixed;
 }
 
-body.background-img-1 {
-    background-image: url("../images/nav-bg/body-bg-1.jpg");
-}
-
-body.background-img-1 .pcoded-navbar.theme-horizontal ~ .pcoded-header[class*="header-"] {
-    background-image: url("../images/nav-bg/body-bg-1.jpg");
-}
-
-body.background-img-2 {
-    background-image: url("../images/nav-bg/body-bg-2.jpg");
-}
-
-body.background-img-2 .pcoded-navbar.theme-horizontal ~ .pcoded-header[class*="header-"] {
-    background-image: url("../images/nav-bg/body-bg-2.jpg");
-}
-
-body.background-img-3 {
-    background-image: url("../images/nav-bg/body-bg-3.jpg");
-}
-
-body.background-img-3 .pcoded-navbar.theme-horizontal ~ .pcoded-header[class*="header-"] {
-    background-image: url("../images/nav-bg/body-bg-3.jpg");
-}
-
-body.background-img-4 {
-    background-image: url("../images/nav-bg/body-bg-4.jpg");
-}
-
-body.background-img-4 .pcoded-navbar.theme-horizontal ~ .pcoded-header[class*="header-"] {
-    background-image: url("../images/nav-bg/body-bg-4.jpg");
-}
-
-body.background-img-5 {
-    background-image: url("../images/nav-bg/body-bg-5.jpg");
-}
-
-body.background-img-5 .pcoded-navbar.theme-horizontal ~ .pcoded-header[class*="header-"] {
-    background-image: url("../images/nav-bg/body-bg-5.jpg");
-}
-
-body.background-img-6 {
-    background-image: url("../images/nav-bg/body-bg-6.jpg");
-}
-
-body.background-img-6 .pcoded-navbar.theme-horizontal ~ .pcoded-header[class*="header-"] {
-    background-image: url("../images/nav-bg/body-bg-6.jpg");
-}
-
 /* ====== [ Header color end ] ======== */
 /* ====== [ Brand color start ] ======== */
 .pcoded-header[class*="brand-"]:not(.brand-default) .mobile-menu span,
@@ -24160,10 +24088,6 @@ body.background-img-6 .pcoded-navbar.theme-horizontal ~ .pcoded-header[class*="h
     left: 0;
     top: 0;
     background: rgba(255, 255, 255, 0.7);
-}
-
-.pcoded-navbar.navbar-image-1 {
-    background-image: url("../images/nav-bg/navbar-img-1.jpg");
 }
 
 /* ====== [ Menu background images end ] ========== */
@@ -26500,7 +26424,7 @@ body.box-layout .pcoded-navbar.theme-horizontal ~ .pcoded-header {
 }
 
 .select2-container--classic .select2-results__option--highlighted[aria-selected] {
-    background-color: #3875d7;
+    background-color: var(--main-color);
     color: #fff;
 }
 

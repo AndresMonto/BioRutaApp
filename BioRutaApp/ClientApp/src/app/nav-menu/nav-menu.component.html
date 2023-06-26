@@ -1,44 +1,94 @@
-<header>
-  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3 bg-primary">
-    <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">BioRuta</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target=".navbar-collapse"
-        aria-label="Toggle navigation"
-        [attr.aria-expanded]="isExpanded"
-        (click)="toggle()"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div
-        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
-        [ngClass]="{ show: isExpanded }"
-      >
-        <ul class="navbar-nav flex-grow" *ngIf="IsAuth">
-          <li
-            class="nav-item"
-            [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-light" [routerLink]="['/']">Home</a>
-          </li>
+<!-- [ Pre-loader ] start -->
+<div class="loader-bg">
+  <div class="loader-track">
+    <div class="loader-fill"></div>
+  </div>
+</div>
+<!-- [ Pre-loader ] End -->
 
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-light" [routerLink]="['/login']"
-              >Salir</a
-            >
+<!-- [ navigation menu ] start -->
+<nav class="pcoded-navbar" id="navbar">
+  <div class="navbar-wrapper  ">
+    <div class="navbar-content scroll-div " >
+
+      <div class="">
+        <div class="main-menu-header">
+          <img class="img-radius" src="../assets/images/user/avatar-2.jpg" alt="User-Profile-Image">
+          <div class="user-details">
+            <span>John Doe</span>
+            <div id="more-details">300 puntos<i class="fa fa-chevron-down m-l-5"></i></div>
+          </div>
+        </div>
+        <div class="collapse" id="nav-user-link">
+          <ul class="list-unstyled">
+            <li class="list-group-item"><a ><i class="feather icon-user m-r-5"></i><span>Editar perfil</span></a></li>
+            <li class="list-group-item"><a (click)="Admin()"><i class="feather icon-settings m-r-5"></i><span>Administración</span></a></li>
+            <li class="list-group-item"><a (click)="LogIn()"><i class="feather icon-log-out m-r-5"></i><span>Cerrar sesión</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <ul class="nav pcoded-inner-navbar ">
+        <li class="nav-item pcoded-menu-caption">
+          <label>Navigation</label>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+        </li>
+        <li class="nav-item pcoded-hasmenu">
+            <a class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Page layouts</span></a>
+            <ul class="pcoded-submenu">
+                <li><a href="layout-vertical.html" target="_blank">Vertical</a></li>
+                <li><a href="layout-horizontal.html" target="_blank">Horizontal</a></li>
+            </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- [ navigation menu ] end -->
+
+<!-- [ Header ] start -->
+<header class="navbar pcoded-header navbar-expand-lg navbar-light header-dark" id="header">
+
+
+      <div class="m-header">
+        <a class="mobile-menu" id="mobile-collapse"><span></span></a>
+        <a href="#!" class="b-brand">
+          <!-- ========   change your logo hear   ============ -->
+          <img src="../assets/images/Ico.png" alt="" class="logo img-fluid rounded" style="width: 3rem;">
+          <img src="../assets/images/logo-icon.png" alt="" class="logo-thumb">
+        </a>
+        <a href="#!" class="mob-toggler">
+          <i class="feather icon-more-vertical"></i>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li>
+            <div class="dropdown drp-user">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="feather icon-user"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right profile-notification">
+                <div class="pro-head">
+                  <img src="../assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
+                  <span>John Doe</span>
+                  <a (click)="LogIn()" class="dud-logout" title="Logout">
+                    <i class="feather icon-log-out"></i>
+                  </a>
+                </div>
+                <ul class="pro-body">
+                  <li><a class="dropdown-item"><i class="feather icon-user"></i> Editar perfil</a></li>
+                  <!-- <li><a href="email_inbox.html" class="dropdown-item"><i class="feather icon-mail"></i> My Messages</a></li> -->
+                  <li><a (click)="LogIn()" class="dropdown-item"><i class="feather icon-lock"></i> Cerrar sesión</a></li>
+                </ul>
+              </div>
+            </div>
           </li>
-        </ul>
-        <ul class="navbar-nav flex-grow" *ngIf="!IsAuth">
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-light" [routerLink]="['/user-register']"
-              >Registarse</a
-            >
         </ul>
       </div>
-    </div>
-  </nav>
+
+
 </header>
+<!-- [ Header ] end -->

@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SecurityService } from './services/security.service';
 
@@ -6,18 +6,19 @@ import { SecurityService } from './services/security.service';
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnInit, OnDestroy {
   IsAuth = false;
   title = 'BioRuta';
   private subsAuth$: Subscription;
 
   constructor(private securityService: SecurityService){
     this.IsAuth = this.securityService.IsAuth;
-    console.log(this.IsAuth);
     this.subsAuth$ = this.securityService.authChange$.subscribe((isAuth) => {
       this.IsAuth = isAuth;
-      console.log(this.IsAuth);
     });
+  }
+
+  ngOnInit(): void {
   }
 
   ngOnDestroy(): void {

@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
+import { RegistroUsuarioComponent } from './auth/registro-usuario/registro-usuario.component';
+import { AdminComponent } from './admin/admin/admin.component';
 
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegistroUsuarioComponent
+    RegistroUsuarioComponent,
+    AdminComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.co
   ],
   exports:[
     LoginComponent,
-    RegistroUsuarioComponent
+    RegistroUsuarioComponent,
+    AdminComponent
   ]
 })
 export class ComponentsModule { }

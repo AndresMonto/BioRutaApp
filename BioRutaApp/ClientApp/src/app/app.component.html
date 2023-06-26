@@ -1,6 +1,11 @@
-<body>
-  <app-nav-menu [IsAuth]="IsAuth" *ngIf="IsAuth"></app-nav-menu>
-  <main class="container">
-    <router-outlet></router-outlet>
-  </main>
-</body>
+<app-nav-menu [IsAuth]="IsAuth" *ngIf="IsAuth"></app-nav-menu>
+
+  <div class="pcoded-main-container" *ngIf="IsAuth; else NoLog">
+    <div class="pcoded-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+<ng-template  #NoLog>
+  <router-outlet></router-outlet>
+</ng-template>
+

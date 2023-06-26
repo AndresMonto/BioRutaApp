@@ -1,9 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Provide sufficient contrast against white background */
-input, .btn{
+input, .btn, select{
   border-radius: 30px !important;
 }
-.card.selection{
-  cursor: pointer;
+.card.selection, a, select{
+  cursor: pointer !important;
 }
+
+.pcoded-navbar.navbar-collapsed li.list-group-item span{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.4s, opacity 0.4s linear;
+}
+

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Controllers } from 'src/environments/environment';
 import { User } from '../models/User';
 import { DataService } from '../services/data.service';
@@ -9,7 +10,11 @@ import { DataService } from '../services/data.service';
 })
 export class HomeComponent {
   public User: User = new User();
-  constructor(private dataService: DataService){
+  constructor(private dataService: DataService, private router: Router){
     this.dataService.post<User>(Controllers.User.GetInfo,{}).subscribe(result => {this.User = result});
+  }
+
+  Admin(){
+    this.router.navigate(['/admin']);
   }
 }

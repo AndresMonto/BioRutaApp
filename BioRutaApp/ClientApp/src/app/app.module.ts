@@ -7,11 +7,12 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/auth/login/login.component';
 import { ComponentsModule } from './components/components.module';
-import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
+import { RegistroUsuarioComponent } from './components/auth/registro-usuario/registro-usuario.component';
 import { JwtInterceptor } from './services/auth/jwt-interceptor';
 import { AuthGuard } from './services/auth/auth-guard';
+import { AdminComponent } from './components/admin/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AuthGuard } from './services/auth/auth-guard';
       { path: 'home', component: HomeComponent, canActivate:[AuthGuard] },
       { path: 'login', component: LoginComponent},
       { path: 'user-register', component: RegistroUsuarioComponent},
+      { path: 'admin', component: AdminComponent, canActivate:[AuthGuard] },
       { path: '**', redirectTo: '/home', pathMatch: 'full' },
     ])
   ],
