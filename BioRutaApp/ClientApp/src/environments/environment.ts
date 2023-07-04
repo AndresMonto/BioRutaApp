@@ -2,14 +2,23 @@ export const environment = {
   production: false
 };
 
-const USER_CONTROLLER  = 'http://localhost:30635' + '/api/User/';
+const CONTROLLER = 'http://localhost:30635/api/';
+
+const USER_CONTROLLER = CONTROLLER + 'User/';
+const ROLE_CONTROLLER = CONTROLLER + 'Role/';
 
 export const Controllers = {
-  User:{
-      SignIn:  USER_CONTROLLER + 'SignIn',
-      Create:  USER_CONTROLLER + 'CreateUser',
-      GetInfo:  USER_CONTROLLER + 'GetUserInfo',
-      GetUsers:  USER_CONTROLLER + 'GetUsers',
-      DeleteUser:  USER_CONTROLLER + 'DeleteUser',
+  User: {
+    SignIn: USER_CONTROLLER + 'SignIn',
+    CreateUser: USER_CONTROLLER + 'CreateUser',
+    CreateClient: USER_CONTROLLER + 'CreateClient',
+    GetInfo: USER_CONTROLLER + 'GetUserInfo',
+    GetUsers: USER_CONTROLLER + 'GetUsers',
+    GetUserById: USER_CONTROLLER + 'GetUserById',
+    DeleteUser: USER_CONTROLLER + 'DeleteUser',
+    Update: USER_CONTROLLER + 'UpdateUser',
+  },
+  Role: {
+    GetRoles: ROLE_CONTROLLER + 'GetRoles'
   }
 }

@@ -17,4 +17,8 @@ export class HomeComponent {
   Admin(){
     this.router.navigate(['/admin']);
   }
+
+  Home(){
+    this.router.navigate(['/']);
+  }
 }

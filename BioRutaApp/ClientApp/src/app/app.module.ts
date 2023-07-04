@@ -30,6 +30,7 @@ import { EditUserComponent } from './components/admin/edit-user/edit-user.compon
       { path: 'login', component: LoginComponent},
       { path: 'user-register', component: RegistroUsuarioComponent},
       { path: 'admin', component: AdminComponent, canActivate:[AuthGuard] },
+      { path: 'adminEdit/:Id', component: EditUserComponent, canActivate:[AuthGuard] },
       { path: 'adminEdit', component: EditUserComponent, canActivate:[AuthGuard] },
       { path: '**', redirectTo: '/home', pathMatch: 'full' },
     ])

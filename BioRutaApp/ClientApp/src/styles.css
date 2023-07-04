@@ -16,5 +16,12 @@ input, .btn, select{
 
 .pcoded-main-container{
   margin-left: 0px !important;
+}
 
+.card-header .title{
+  margin-left: 15px !important;
+}
+
+.card-header .button{
+  margin-right: 15px !important;
 }
