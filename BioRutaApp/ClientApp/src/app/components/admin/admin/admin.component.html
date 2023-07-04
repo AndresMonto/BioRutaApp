@@ -1,0 +1,75 @@
+<!-- [ breadcrumb ] start -->
+<div class="page-header">
+  <div class="page-block">
+    <div class="row align-items-center">
+      <div class="col-md-12">
+        <div class="page-header-title">
+          <h5 class="m-b-10">BioRuta</h5>
+        </div>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a (click)="Home()"><i class="feather icon-home"></i></a></li>
+          <li class="breadcrumb-item"><a >Administración</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [ breadcrumb ] end -->
+<!-- [ Main Content ] start -->
+
+<div class="col-sm-12">
+  <div class="card">
+    <div class="card-header">
+      <div class="row justify-content-between">
+        <div class="title">
+          <h4>Usuarios</h4>
+        </div>
+        <div class="button">
+          <button type="button" class="btn btn-secondary" (click)="CreateUser()">Agregar</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body table-border-style">
+      <form class="row justify-content-start">
+        <div class="form-group mb-3 col-md-10 col-lg-3">
+          <input type="text" class="form-control" id="Search" placeholder="Busqueda" name="Search" [(ngModel)]="Search">
+        </div>
+        <div class="form-group mt-1 col-md-2">
+          <button class="btn btn-primary feather icon-search" (click)="SearchWord()"></button>
+        </div>
+
+        <div class="d-flex justify-content-center"  *ngIf="loading">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden" hidden>Loading...</span>
+          </div>
+        </div>
+
+      </form>
+
+      <div class="table-responsive">
+        <table class="table table-striped text-center">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo electrónico</th>
+              <th>Rol</th>
+              <th>Estado</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let u of Users">
+              <td>{{u.Name}}</td>
+              <td>{{u.Email}}</td>
+              <td>{{u.Role.Name}}</td>
+              <td>{{u.State? "Activo" : "Inactivo"}}</td>
+              <td><button type="button" class="btn btn-primary col" (click)="EditUser(u)">Editar</button></td>
+              <td><button class="btn btn-danger col" (click)="DeleteUser(u)">Inhabilitar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

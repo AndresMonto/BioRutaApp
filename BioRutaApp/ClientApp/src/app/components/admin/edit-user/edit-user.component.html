@@ -1,0 +1,94 @@
+<!-- [ breadcrumb ] start -->
+<div class="page-header">
+  <div class="page-block">
+    <div class="row align-items-center">
+      <div class="col-md-12">
+        <div class="page-header-title">
+          <h5 class="m-b-10">BioRuta</h5>
+        </div>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a (click)="Home()"><i class="feather icon-home"></i></a></li>
+          <li class="breadcrumb-item"><a (click)="Admin()">Administración</a></li>
+          <li class="breadcrumb-item"><a >Editar Usuario</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [ breadcrumb ] end -->
+<!-- [ Main Content ] start -->
+
+
+<div class="col-sm-12">
+  <div class="card">
+    <div class="card-header">
+      <h5>Editar Usuario</h5>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="formEdit">
+        <input type="email" hidden>
+        <input type="password" hidden>
+
+        <div class="row">
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="floating-label" for="Name">Nombre</label>
+              <input type="text" class="form-control" id="Name" formControlName="Name" name="Name" [(ngModel)]="User.Name">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="floating-label" for="Email">Correo electrónico</label>
+              <input type="text" class="form-control" id="Email" formControlName="Email" name="Email" [(ngModel)]="User.Email">
+            </div>
+          </div>
+
+          <div class="col-sm-4" *ngIf="!edit">
+            <div class="form-group">
+              <label class="floating-label" for="Password">Contraseña</label>
+              <input type="password" class="form-control" id="Password" formControlName="Password" name="Password" [(ngModel)]="User.Password">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="floating-label" for="Email">Rol</label>
+              <select class="form-control" name="RoleId" formControlName="Role" [(ngModel)]="User.Role">
+                <option *ngFor="let rol of Roles" [ngValue]="rol">
+                  {{ rol.Name }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group mt-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="State" name="State" formControlName="State" [(ngModel)]="User.State">
+                <label class="floating-label" for="State">Activo</label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div *ngIf="(!formEdit.valid || User.Role.Id == 0) || (!edit && User.Password.length < minLength)"><p class="text-danger text-center">*Debe ingresar un Correo Válido, un Nombre de Usuario {{edit ? " y Contraseña " : "" }} {{minLength}} de almenos caracteres, y un Rol</p></div>
+          <div><p class="text-danger text-center" *ngIf="User.Error">{{User.Message}}</p></div>
+
+          <div class="d-flex justify-content-center"  *ngIf="loading">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden" hidden>Loading...</span>
+            </div>
+          </div>
+
+      </form>
+    </div>
+    <div class="card-footer">
+      <div class="row justify-content-center">
+        <button type="button" class="btn btn-primary col-sm-3" (click)="Save()" [disabled]="(!formEdit.valid || User.Role.Id == 0) || (!edit && User.Password.length < minLength)">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
