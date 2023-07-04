@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -13,6 +12,7 @@ import { RegistroUsuarioComponent } from './components/auth/registro-usuario/reg
 import { JwtInterceptor } from './services/auth/jwt-interceptor';
 import { AuthGuard } from './services/auth/auth-guard';
 import { AdminComponent } from './components/admin/admin/admin.component';
+import { EditUserComponent } from './components/admin/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { AdminComponent } from './components/admin/admin/admin.component';
       { path: 'login', component: LoginComponent},
       { path: 'user-register', component: RegistroUsuarioComponent},
       { path: 'admin', component: AdminComponent, canActivate:[AuthGuard] },
+      { path: 'adminEdit', component: EditUserComponent, canActivate:[AuthGuard] },
       { path: '**', redirectTo: '/home', pathMatch: 'full' },
     ])
   ],

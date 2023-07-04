@@ -4,7 +4,7 @@
 input, .btn, select{
   border-radius: 30px !important;
 }
-.card.selection, a, select{
+.card.selection, a, select, .form-check-input, .floating-label{
   cursor: pointer !important;
 }
 
@@ -14,3 +14,7 @@ input, .btn, select{
   transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
 
+.pcoded-main-container{
+  margin-left: 0px !important;
+
+}

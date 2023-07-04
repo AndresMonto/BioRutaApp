@@ -20,12 +20,13 @@ export class DataService {
     });
   }
 
-  public post<T>(url: string, data: any) : Observable<T> {
+  public post<T>(url: string, data: any, params: HttpParams = new HttpParams()) : Observable<T> {
 
     let httpHeader: HttpHeaders =  this.GetHeaders();
 
     return this.http.post<T>(url, data , {
       headers: httpHeader,
+      params: params
     });
   }
 
@@ -50,10 +51,11 @@ export class DataService {
 
   private GetHeaders() : HttpHeaders{
     let httpHeaders: HttpHeaders = new HttpHeaders();
-    // let token = this.securityService.GetToken();
-    // if(token){
-    //   httpHeaders = httpHeaders.append("Authorization", "Bearer " + token);
-    // }
+    let token = this.securityService.GetToken();
+    if(token){
+      httpHeaders = httpHeaders.append("Authorization", "Bearer " + token);
+    }
+    httpHeaders = httpHeaders.append("Content-Type", "application/json");
     return httpHeaders;
   }
 }

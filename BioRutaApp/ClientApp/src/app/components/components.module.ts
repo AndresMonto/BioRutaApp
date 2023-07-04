@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistroUsuarioComponent } from './auth/registro-usuario/registro-usuario.component';
 import { AdminComponent } from './admin/admin/admin.component';
+import { EditUserComponent } from './admin/edit-user/edit-user.component';
 
 
 
@@ -12,7 +13,8 @@ import { AdminComponent } from './admin/admin/admin.component';
   declarations: [
     LoginComponent,
     RegistroUsuarioComponent,
-    AdminComponent
+    AdminComponent,
+    EditUserComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { AdminComponent } from './admin/admin/admin.component';
   exports:[
     LoginComponent,
     RegistroUsuarioComponent,
-    AdminComponent
+    AdminComponent,
+    EditUserComponent
   ]
 })
 export class ComponentsModule { }

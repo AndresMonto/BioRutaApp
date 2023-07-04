@@ -1865,7 +1865,7 @@ pre code {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.03);
 }
 
 .table-hover tbody tr:hover {
@@ -26446,7 +26446,7 @@ body.box-layout .pcoded-navbar.theme-horizontal ~ .pcoded-header {
     border-bottom: 1px solid #e2e5e8;
     font-size: 13px;
     color: #37474f;
-    background: #f6f6f6;
+    background: #e4e4e4;
     text-transform: uppercase;
 }
 
@@ -26474,7 +26474,7 @@ body.box-layout .pcoded-navbar.theme-horizontal ~ .pcoded-header {
 
 /* Zebra-striping */
 .table-striped tbody tr:nth-of-type(2n+1) {
-    background-color: rgba(26, 188, 156, 0.03);
+    /* background-color: rgba(26, 188, 156, 0.03); */
 }
 
 /* Hover effect */

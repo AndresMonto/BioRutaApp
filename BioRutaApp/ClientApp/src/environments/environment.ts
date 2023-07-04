@@ -9,5 +9,7 @@ export const Controllers = {
       SignIn:  USER_CONTROLLER + 'SignIn',
       Create:  USER_CONTROLLER + 'CreateUser',
       GetInfo:  USER_CONTROLLER + 'GetUserInfo',
+      GetUsers:  USER_CONTROLLER + 'GetUsers',
+      DeleteUser:  USER_CONTROLLER + 'DeleteUser',
   }
 }
