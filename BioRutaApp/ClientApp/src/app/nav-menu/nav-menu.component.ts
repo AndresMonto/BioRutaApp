@@ -47,4 +47,9 @@ export class NavMenuComponent implements OnInit {
   Home(){
     this.router.navigate(['/']);
   }
+
+  EditUser(){
+    console.log(this.User.Id);
+    this.router.navigate(['/adminEdit', this.User.Id]);
+  }
 }
