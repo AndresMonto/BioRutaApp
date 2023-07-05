@@ -7,6 +7,7 @@ const CONTROLLER = 'https://webapibioruta.azurewebsites.net/api/';
 const USER_CONTROLLER = CONTROLLER + 'User/';
 const ROLE_CONTROLLER = CONTROLLER + 'Role/';
 const PRODUCT_CONTROLLER = CONTROLLER + 'Product/';
+const COLLECT_CONTROLLER = CONTROLLER + 'Collect/';
 
 export const Controllers = {
   User: {
@@ -28,5 +29,12 @@ export const Controllers = {
     CreateProduct: PRODUCT_CONTROLLER + 'CreateProduct',
     UpdateProduct: PRODUCT_CONTROLLER + 'UpdateProduct',
     GetProductById: PRODUCT_CONTROLLER + 'GetProductById',
+  },
+  Collects: {
+    GetCollects: COLLECT_CONTROLLER + 'GetCollects',
+    DeleteCollect: COLLECT_CONTROLLER + 'DeleteCollect',
+    CreateCollect: COLLECT_CONTROLLER + 'CreateCollect',
+    UpdateCollect: COLLECT_CONTROLLER + 'UpdateCollect',
+    GetCollectById: COLLECT_CONTROLLER + 'GetCollectById',
   }
 }

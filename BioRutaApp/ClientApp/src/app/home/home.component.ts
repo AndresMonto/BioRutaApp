@@ -27,4 +27,8 @@ export class HomeComponent {
   Products(){
     this.router.navigate(['/listProducts']);
   }
+
+  Collects(){
+    this.router.navigate(['/listCollects']);
+  }
 }

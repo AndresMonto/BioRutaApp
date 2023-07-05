@@ -8,6 +8,8 @@ import { AdminComponent } from './admin/admin/admin.component';
 import { EditUserComponent } from './admin/edit-user/edit-user.component';
 import { ListProductsComponent } from './admin-products/list-products/list-products.component';
 import { EditProductComponent } from './admin-products/edit-product/edit-product.component';
+import { ListCollectsComponent } from './admin-collects/list-collects/list-collects.component';
+import { EditCollectsComponent } from './admin-collects/edit-collects/edit-collects.component';
 
 
 
@@ -18,7 +20,9 @@ import { EditProductComponent } from './admin-products/edit-product/edit-product
     AdminComponent,
     EditUserComponent,
     ListProductsComponent,
-    EditProductComponent
+    EditProductComponent,
+    ListCollectsComponent,
+    EditCollectsComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +35,8 @@ import { EditProductComponent } from './admin-products/edit-product/edit-product
     RegistroUsuarioComponent,
     AdminComponent,
     EditUserComponent,
-    ListProductsComponent
+    ListProductsComponent,
+    ListCollectsComponent
   ]
 })
 export class ComponentsModule { }

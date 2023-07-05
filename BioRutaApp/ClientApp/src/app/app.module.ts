@@ -15,6 +15,8 @@ import { EditUserComponent } from './components/admin/edit-user/edit-user.compon
 import { ListProductsComponent } from './components/admin-products/list-products/list-products.component';
 import { AdminGuard } from './services/auth/users/admin-guard.service';
 import { EditProductComponent } from './components/admin-products/edit-product/edit-product.component';
+import { ListCollectsComponent } from './components/admin-collects/list-collects/list-collects.component';
+import { EditCollectsComponent } from './components/admin-collects/edit-collects/edit-collects.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,10 @@ import { EditProductComponent } from './components/admin-products/edit-product/e
       { path: 'listProducts', component: ListProductsComponent, canActivate:[AuthGuard, AdminGuard] },
       { path: 'productEdit/:Id', component: EditProductComponent, canActivate:[AuthGuard, AdminGuard] },
       { path: 'productEdit', component: EditProductComponent, canActivate:[AuthGuard, AdminGuard] },
+
+      { path: 'listCollects', component: ListCollectsComponent, canActivate:[AuthGuard, ] },
+      { path: 'collectEdit/:Id', component: EditCollectsComponent, canActivate:[AuthGuard, ] },
+      { path: 'collectEdit', component: EditCollectsComponent, canActivate:[AuthGuard, ] },
 
       { path: '**', redirectTo: '/home', pathMatch: 'full' },
     ])
