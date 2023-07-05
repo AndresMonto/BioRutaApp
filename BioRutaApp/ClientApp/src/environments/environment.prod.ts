@@ -32,6 +32,7 @@ export const Controllers = {
   },
   Collects: {
     GetCollects: COLLECT_CONTROLLER + 'GetCollects',
+    GetCollectsDate: COLLECT_CONTROLLER + 'GetCollectsDate',
     DeleteCollect: COLLECT_CONTROLLER + 'DeleteCollect',
     CreateCollect: COLLECT_CONTROLLER + 'CreateCollect',
     UpdateCollect: COLLECT_CONTROLLER + 'UpdateCollect',
