@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { User } from '../models/User';
 import { StorageService } from './storage.service';
 
 @Injectable({
@@ -14,7 +15,7 @@ export class SecurityService {
   constructor(private storageService: StorageService) {
     if(this.storageService.GetToken("IsAuth") !== '' && this.storageService.GetToken("AuthUserToken") !== ''){
       this.IsAuth = this.storageService.GetToken("IsAuth") == 'true';
-      this.authSource.next(true);
+      this.authSource.next(this.IsAuth);
     }
   }
 
@@ -29,10 +30,19 @@ export class SecurityService {
     this.authSource.next(this.IsAuth);
   }
 
+  public SetUserInfo(value: any){
+    this.storageService.SetToken("User", JSON.stringify(value));
+  }
+
+  public GetUserInfo() : User{
+    return JSON.parse(this.storageService.GetToken("User") ?? "{}");
+  }
+
   public ResetToken(){
     this.storageService.SetToken("AuthUserToken", "");
     this.IsAuth = false;
-    this.storageService.SetToken("IsAuth", this.IsAuth);
+    this.storageService.SetToken("IsAuth", false);
+    this.storageService.SetToken("User", "");
     this.authSource.next(this.IsAuth);
   }
 

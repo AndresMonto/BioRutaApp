@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Login } from 'src/app/models/Login';
+import { User } from 'src/app/models/User';
 import { DataService } from 'src/app/services/data.service';
 import { SecurityService } from 'src/app/services/security.service';
 import { Controllers } from 'src/environments/environment';
@@ -20,41 +21,43 @@ export class LoginComponent implements OnInit, OnDestroy {
   private subRef$: Subscription | undefined;
 
   constructor(
-     public Login: Login,
-     private formBuilder: FormBuilder,
-     private dataService: DataService,
-     private securityService: SecurityService,
-     private router: Router) {
+    public Login: Login,
+    private formBuilder: FormBuilder,
+    private dataService: DataService,
+    private securityService: SecurityService,
+    private router: Router) {
 
     this.formLogin = this.formBuilder.group({
-      Email:['Email', [Validators.required, Validators.email]],
-      Password:['Password', [Validators.required, Validators.minLength(this.minLength)]],
+      Email: ['Email', [Validators.required, Validators.email]],
+      Password: ['Password', [Validators.required, Validators.minLength(this.minLength)]],
     });
-
-    this.securityService.ResetToken();
-   }
+  }
 
   ngOnInit(): void {
-    this.Login =  new Login();
+    this.Login = new Login();
+    // this.securityService.ResetToken();
   }
 
   ngOnDestroy(): void {
     this.subRef$?.unsubscribe();
   }
 
-  SignIn(){
-    if(this.formLogin.valid){
+  SignIn() {
+    if (this.formLogin.valid) {
       this.Login.Error = false;
       this.loading = true;
 
-      this.subRef$ = this.dataService.post<Login>(Controllers.User.SignIn, this.Login).subscribe({
+      this.dataService.post<Login>(Controllers.User.SignIn, this.Login).subscribe({
         next: (v) => {
           this.loading = false;
-          if(v.Error){
+          if (v.Error) {
             this.Login = v;
-          }else{
+          } else {
             this.securityService.SetToken(v.Token);
-            this.router.navigate(['/home']);
+              this.dataService.post<User>(Controllers.User.GetInfo, {}).subscribe(result => {
+                this.securityService.SetUserInfo(result);
+                this.router.navigate(['/home']);
+              });
           }
         },
         error: (e) => {
@@ -68,14 +71,13 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
   }
 
-  UserRegister(){
+  UserRegister() {
     this.router.navigate(['/user-register']);
   }
 
-  Clean(){
+  Clean() {
     this.Login.Message = "";
     this.Login.Error = false;
   }
 
 }
-

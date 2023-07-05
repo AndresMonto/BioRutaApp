@@ -1,6 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Controllers } from 'src/environments/environment';
 import { AppComponent } from '../app.component';
+import { User } from '../models/User';
+import { DataService } from '../services/data.service';
+import { SecurityService } from '../services/security.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -9,8 +13,11 @@ import { AppComponent } from '../app.component';
 })
 export class NavMenuComponent implements OnInit {
   @Input() IsAuth : boolean = false;
+  public User: User = new User();
 
-  constructor(private router : Router){}
+  constructor(private router : Router, private dataService: DataService, private securityService : SecurityService){
+    this.dataService.post<User>(Controllers.User.GetInfo,{}).subscribe(result => {this.User = result});
+  }
 
   ngOnInit(): void {
     this.Create([
@@ -29,10 +36,15 @@ export class NavMenuComponent implements OnInit {
   }
 
   LogIn(){
+    this.securityService.ResetToken();
     this.router.navigate(['/login']);
   }
 
   Admin(){
     this.router.navigate(['/admin']);
+  }
+
+  Home(){
+    this.router.navigate(['/']);
   }
 }

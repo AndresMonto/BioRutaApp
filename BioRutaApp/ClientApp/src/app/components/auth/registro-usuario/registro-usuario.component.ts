@@ -21,8 +21,6 @@ export class RegistroUsuarioComponent implements OnInit, OnDestroy {
   private subRef$: Subscription | undefined;
 
   constructor(public User: User, private dataService: DataService,private formBuilder: FormBuilder, private securityService: SecurityService, private router: Router) {
-    this.securityService.ResetToken();
-
     this.formRegister = this.formBuilder.group({
       Name:['Name', [Validators.required, Validators.minLength(this.minLength)]],
       Email:['Email', [Validators.required, Validators.email]],
@@ -32,6 +30,7 @@ export class RegistroUsuarioComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.User = new User();
+    this.securityService.ResetToken();
   }
 
   ngOnDestroy(): void {

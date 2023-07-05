@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistroUsuarioComponent } from './auth/registro-usuario/registro-usuario.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { EditUserComponent } from './admin/edit-user/edit-user.component';
+import { ListProductsComponent } from './admin-products/list-products/list-products.component';
 
 
 
@@ -14,7 +15,8 @@ import { EditUserComponent } from './admin/edit-user/edit-user.component';
     LoginComponent,
     RegistroUsuarioComponent,
     AdminComponent,
-    EditUserComponent
+    EditUserComponent,
+    ListProductsComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { EditUserComponent } from './admin/edit-user/edit-user.component';
     LoginComponent,
     RegistroUsuarioComponent,
     AdminComponent,
-    EditUserComponent
+    EditUserComponent,
+    ListProductsComponent
   ]
 })
 export class ComponentsModule { }

@@ -19,7 +19,7 @@
 <div class="row">
   <!-- table card-1 start -->
 
-  <div class="col-sm-5 col-md-4">
+  <div class="col-sm-5 col-md-4" *ngIf="User.Role.Name == 'Administrador'">
       <div class="card flat-card selection" (click)="Admin()">
           <div class="row-table">
               <div class="card-body br">

@@ -11,7 +11,7 @@
 
 
       <div class="m-header">
-        <a href="#!" class="b-brand">
+        <a (click)="Home()" class="b-brand">
           <!-- ========   change your logo hear   ============ -->
           <img src="../assets/images/Ico.png" alt="" class="logo img-fluid rounded" style="width: 3rem;">
           <img src="../assets/images/logo-icon.png" alt="" class="logo-thumb">
@@ -29,8 +29,8 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right profile-notification">
                 <div class="pro-head">
-                  <img src="../assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
-                  <span>John Doe</span>
+                  <img src="../assets/images/user/User.png" class="img-radius" alt="User-Profile-Image">
+                  <span>{{User.Name}}</span>
                   <a (click)="LogIn()" class="dud-logout" title="Logout">
                     <i class="feather icon-log-out"></i>
                   </a>

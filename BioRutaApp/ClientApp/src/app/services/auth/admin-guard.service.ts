@@ -1,7 +1,5 @@
 import { Injectable } from "@angular/core";
 import { CanActivate, Router } from "@angular/router";
-import { User } from "src/app/models/User";
-import { Controllers } from "src/environments/environment";
 import { DataService } from "../data.service";
 import { SecurityService } from "../security.service";
 
@@ -10,14 +8,13 @@ import { SecurityService } from "../security.service";
 })
 export class AdminGuard implements CanActivate {
 
-  constructor(private router: Router, private securityService: SecurityService, private dataService: DataService){}
+  constructor(private router: Router, private securityService: SecurityService, private dataService: DataService) { }
 
   canActivate(): boolean {
-    if(this.securityService.IsAuth){
-      return true;
-    }else{
-      this.router.navigate(["/login"]);
+    var valid = this.securityService.GetUserInfo().Role.Name == "Administrador";
+    if (!valid) {
+      this.router.navigate(['/']);
     }
-    return false;
+    return valid;
   }
 }

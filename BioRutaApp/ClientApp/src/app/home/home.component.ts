@@ -9,8 +9,10 @@ import { DataService } from '../services/data.service';
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  public User: User = new User();
-  constructor(private dataService: DataService, private router: Router){
+
+  public User : User = new User();
+
+  constructor(private router : Router, private dataService: DataService){
     this.dataService.post<User>(Controllers.User.GetInfo,{}).subscribe(result => {this.User = result});
   }
 
