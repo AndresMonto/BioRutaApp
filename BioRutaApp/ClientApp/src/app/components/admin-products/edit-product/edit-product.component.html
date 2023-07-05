@@ -9,7 +9,7 @@
         <ul class="breadcrumb">
           <li class="breadcrumb-item"><a (click)="Home()"><i class="feather icon-home"></i></a></li>
           <li class="breadcrumb-item"><a (click)="List()">Administración Productos</a></li>
-          <li class="breadcrumb-item"><a >Editar Producto</a></li>
+          <li class="breadcrumb-item"><a >{{edit ? "Editar" : "Agregar" }} Producto</a></li>
         </ul>
       </div>
     </div>
@@ -22,7 +22,7 @@
 <div class="col-sm-12">
   <div class="card">
     <div class="card-header">
-      <h5>Editar Producto</h5>
+      <h5>{{edit ? "Editar" : "Agregar" }} Producto</h5>
     </div>
     <div class="card-body">
       <form [formGroup]="formEdit">

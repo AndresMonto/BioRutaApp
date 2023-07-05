@@ -24,7 +24,7 @@
         <div class="title">
           <h4>Recolecciones</h4>
         </div>
-        <div class="button">
+        <div class="button" *ngIf="User.Role.Name == 'Cliente'">
           <button type="button" class="btn btn-secondary" (click)="CreateCollect()">Agregar</button>
         </div>
       </div>

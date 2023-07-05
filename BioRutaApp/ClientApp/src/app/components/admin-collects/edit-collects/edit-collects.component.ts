@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from 'src/app/models/Product';
+import { Collect } from 'src/app/models/Collect';
 import { DataService } from 'src/app/services/data.service';
-import { Controllers } from 'src/environments/environment';;
+import { Controllers } from 'src/environments/environment';
 
 @Component({
   selector: 'app-edit-collects',
@@ -12,7 +12,7 @@ import { Controllers } from 'src/environments/environment';;
 })
 export class EditCollectsComponent {
 
-  public Product: Product = new Product();
+  public Collect: Collect = new Collect();
 
   public formEdit: FormGroup;
   public minLength: number = 5;
@@ -26,14 +26,17 @@ export class EditCollectsComponent {
 
     if(id != null){
       this.edit = true;
-      this.dataService.post<Product>(Controllers.Products.GetProductById, JSON.stringify(id)).subscribe(result => { this.Product = result;});
+      this.dataService.post<Collect>(Controllers.Collects.GetCollectById, JSON.stringify(id)).subscribe(result => { this.Collect = result;});
+    }else{
+      this.Collect.RegistrationDate = "";
     }
 
 
     this.formEdit = this.formBuilder.group({
-      Name:['Name', [Validators.required, Validators.minLength(this.minLength)]],
-      Score:['Score', [Validators.required, Validators.minLength(1)]],
-      State:['State', [Validators.required]]
+      RegistrationDate:['RegistrationDate', [Validators.required, Validators.minLength(this.minLength)]],
+      ClientName:['ClientName', [Validators.required, Validators.minLength(this.minLength)]],
+      StateName:['StateName', [Validators.required, Validators.minLength(this.minLength)]],
+      Addres:['Addres', [Validators.required, Validators.minLength(this.minLength)]],
     });
   }
 
@@ -42,31 +45,31 @@ export class EditCollectsComponent {
   }
 
   List(){
-    this.router.navigate(['/listProducts']);
+    this.router.navigate(['/listCollects']);
   }
 
   Save(){
 
     if(this.formEdit.valid){
-      this.Product.Error = false;
+      this.Collect.Error = false;
       this.loading = true;
 
-      var url = this.edit ? Controllers.Products.UpdateProduct : Controllers.Products.CreateProduct ;
+      var url = this.edit ? Controllers.Collects.UpdateCollect : Controllers.Collects.CreateCollect ;
 
-      this.dataService.post<Product>(url,this.Product).subscribe({
+      this.dataService.post<Collect>(url,this.Collect).subscribe({
         next: (v) => {
           this.loading = false;
           if(v.Error){
-            this.Product = v;
+            this.Collect = v;
           }else{
-            alert(`Producto ${this.edit ? "actualizado" : "creado" }!`);
+            alert(`Recolección ${this.edit ? "actualizada" : "creada" }!`);
             this.router.navigate(['/listProducts']);
           }
         },
         error: (e) => {
           this.loading = false;
-          this.Product.Error = true;
-          this.Product.Message = e.message;
+          this.Collect.Error = true;
+          this.Collect.Message = e.message;
           console.error(e);
         },
       });
