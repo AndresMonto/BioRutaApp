@@ -3,12 +3,12 @@
   <div class="page-block">
     <div class="row align-items-center">
       <div class="col-md-12">
-        <div class="page-header-title">
+        <!-- <div class="page-header-title">
           <h5 class="m-b-10">BioRuta</h5>
-        </div>
+        </div> -->
         <ul class="breadcrumb">
           <li class="breadcrumb-item"><a (click)="Home()"><i class="feather icon-home"></i></a></li>
-          <li class="breadcrumb-item"><a >Administración</a></li>
+          <li class="breadcrumb-item"><a >Administración Productos</a></li>
         </ul>
       </div>
     </div>
@@ -22,10 +22,10 @@
     <div class="card-header">
       <div class="row justify-content-between">
         <div class="title">
-          <h4>Usuarios</h4>
+          <h4>Productos</h4>
         </div>
         <div class="button">
-          <button type="button" class="btn btn-secondary" (click)="CreateUser()">Agregar</button>
+          <button type="button" class="btn btn-secondary" (click)="CreateProduct()">Agregar</button>
         </div>
       </div>
     </div>
@@ -51,21 +51,19 @@
           <thead>
             <tr>
               <th>Nombre</th>
-              <th>Correo electrónico</th>
-              <th>Rol</th>
+              <th>Puntaje</th>
               <th>Estado</th>
               <th></th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let u of Users">
-              <td>{{u.Name}}</td>
-              <td>{{u.Email}}</td>
-              <td>{{u.Role.Name}}</td>
-              <td>{{u.State? "Activo" : "Inactivo"}}</td>
-              <td><button type="button" class="btn btn-primary col" (click)="EditUser(u)">Editar</button></td>
-              <td><button class="btn btn-danger col" (click)="DeleteUser(u)">Inhabilitar</button></td>
+            <tr *ngFor="let p of Products">
+              <td>{{p.Name}}</td>
+              <td>{{p.Score}}</td>
+              <td>{{p.State? "Activo" : "Inactivo"}}</td>
+              <td><button type="button" class="btn btn-primary col" (click)="EditProduct(p)">Editar</button></td>
+              <td><button class="btn btn-danger col" (click)="DeleteProduct(p)">Inhabilitar</button></td>
             </tr>
           </tbody>
         </table>

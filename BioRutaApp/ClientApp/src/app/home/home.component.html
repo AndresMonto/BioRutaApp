@@ -1,15 +1,19 @@
 <!-- [ breadcrumb ] start -->
+
 <div class="page-header">
   <div class="page-block">
       <div class="row align-items-center">
           <div class="col-md-12">
-              <div class="page-header-title">
+              <!-- <div class="page-header-title">
                   <h5 class="m-b-10">BioRuta</h5>
-              </div>
+              </div> -->
               <ul class="breadcrumb">
                   <li class="breadcrumb-item"><a (click)="Home()"><i class="feather icon-home"></i></a></li>
                   <li class="breadcrumb-item"><a>Inicio</a></li>
               </ul>
+              <div class="text-center mb-5">
+                <h4>Hola <strong>{{User.Name}}</strong>, ingresaste como {{User.Role.Name}}</h4>
+              </div>
           </div>
       </div>
   </div>
@@ -36,8 +40,8 @@
       </div>
   </div>
 
-  <div class="col-sm-5 col-md-4">
-    <div class="card flat-card selection">
+  <div class="col-sm-5 col-md-4" *ngIf="User.Role.Name == 'Administrador'">
+    <div class="card flat-card selection" (click)="Products()">
         <div class="row-table">
             <div class="card-body br">
                 <div class="row">

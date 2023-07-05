@@ -18157,7 +18157,7 @@ strong {
 
 .page-header {
     background: transparent;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 .page-header h5 {
@@ -25153,7 +25153,7 @@ body.box-layout .pcoded-navbar.theme-horizontal ~ .pcoded-header {
 }
 
 .widget-profile-card-3 {
-    background-image: url("../images/widget/slider5.jpg");
+    /* background-image: url("../images/widget/slider5.jpg"); */
     background-size: cover;
     padding: 50px 0;
     text-align: center;
@@ -25219,7 +25219,7 @@ body.box-layout .pcoded-navbar.theme-horizontal ~ .pcoded-header {
     color: #fff;
     text-align: center;
     padding-top: 45px;
-    background-image: url("../images/widget/blur-bg.png");
+    /* background-image: url("../images/widget/blur-bg.png"); */
     background-size: cover;
 }
 
@@ -25619,15 +25619,15 @@ body.box-layout .pcoded-navbar.theme-horizontal ~ .pcoded-header {
 }
 
 .lb-cancel {
-    background: url("../images/loading.gif") no-repeat;
+    /* background: url("../images/loading.gif") no-repeat; */
 }
 
 .lb-nav a.lb-prev {
-    background: url("../images/prev.png") left 48% no-repeat;
+    /* background: url("../images/prev.png") left 48% no-repeat; */
 }
 
 .lb-nav a.lb-next {
-    background: url("../images/next.png") right 48% no-repeat;
+    /* background: url("../images/next.png") right 48% no-repeat; */
 }
 
 .lb-data .lb-caption a {
@@ -25635,7 +25635,7 @@ body.box-layout .pcoded-navbar.theme-horizontal ~ .pcoded-header {
 }
 
 .lb-data .lb-close {
-    background: url("../images/close.png") top right no-repeat;
+    /* background: url("../images/close.png") top right no-repeat; */
 }
 
 .alert-dismissable .close,
@@ -27762,7 +27762,7 @@ text.highcharts-drilldown-data-label {
 
 /* image varient start */
 .aut-bg-img {
-    background-image: url("../images/auth/img-auth-big.jpg");
+    /* background-image: url("../images/auth/img-auth-big.jpg"); */
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -28121,7 +28121,7 @@ text.highcharts-drilldown-data-label {
 }
 
 #task-container li.complete:before {
-    background: url("../images/complete.png") no-repeat;
+    /* background: url("../images/complete.png") no-repeat; */
     position: absolute;
     top: 5px;
     right: 5px;

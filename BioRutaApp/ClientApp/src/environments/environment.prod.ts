@@ -2,10 +2,11 @@ export const environment = {
   production: true
 };
 
-const CONTROLLER = 'https://webapibioruta.azurewebsites.net/';
+const CONTROLLER = 'https://webapibioruta.azurewebsites.net/api/';
 
 const USER_CONTROLLER = CONTROLLER + 'User/';
 const ROLE_CONTROLLER = CONTROLLER + 'Role/';
+const PRODUCT_CONTROLLER = CONTROLLER + 'Product/';
 
 export const Controllers = {
   User: {
@@ -16,9 +17,16 @@ export const Controllers = {
     GetUsers: USER_CONTROLLER + 'GetUsers',
     GetUserById: USER_CONTROLLER + 'GetUserById',
     DeleteUser: USER_CONTROLLER + 'DeleteUser',
-    Update: USER_CONTROLLER + 'UpdateUser',
+    UpdateUser: USER_CONTROLLER + 'UpdateUser',
   },
   Role: {
     GetRoles: ROLE_CONTROLLER + 'GetRoles'
+  },
+  Products: {
+    GetProducts: PRODUCT_CONTROLLER + 'GetProducts',
+    DeleteProduct: PRODUCT_CONTROLLER + 'DeleteProduct',
+    CreateProduct: PRODUCT_CONTROLLER + 'CreateProduct',
+    UpdateProduct: PRODUCT_CONTROLLER + 'UpdateProduct',
+    GetProductById: PRODUCT_CONTROLLER + 'GetProductById',
   }
 }

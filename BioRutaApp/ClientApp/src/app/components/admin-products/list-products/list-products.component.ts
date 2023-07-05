@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/models/Product';
 import { User } from 'src/app/models/User';
 import { DataService } from 'src/app/services/data.service';
 import { Controllers } from 'src/environments/environment';
@@ -11,39 +12,38 @@ import { Controllers } from 'src/environments/environment';
   styleUrls: ['./list-products.component.css']
 })
 export class ListProductsComponent {
-  public Users: User[] = [];
+  public Products: Product[] = [];
   public Search: string = "";
   public loading: boolean = false;
 
   constructor(private dataService: DataService, private router: Router) {
     this.loading = true;
-    this.dataService.post<User[]>(Controllers.User.GetUsers, JSON.stringify("")).subscribe(result => { this.Users = result, this.loading = false; });
+    this.dataService.post<Product[]>(Controllers.Products.GetProducts, JSON.stringify("")).subscribe(result => { this.Products = result, this.loading = false; });
   }
 
-  EditUser(User: User) {
-    this.router.navigate(['/adminEdit', User.Id]);
+  EditProduct(Product: Product) {
+    this.router.navigate(['/productEdit', Product.Id]);
   }
 
-  CreateUser() {
-    this.router.navigate(['/adminEdit']);
+  CreateProduct() {
+    this.router.navigate(['/productEdit']);
   }
 
   Home() {
     this.router.navigate(['/']);
   }
 
-
-  DeleteUser(User: User) {
-    if (confirm(`¿Seguro desea eliminar el registro ${User.Name}?`)) {
+  DeleteProduct(Product: Product) {
+    if (confirm(`¿Seguro desea inhabilitar el registro ${Product.Name}?`)) {
       this.loading = true;
-      this.dataService.post<User>(Controllers.User.DeleteUser, User).subscribe(result => {
-        this.dataService.post<User[]>(Controllers.User.GetUsers, JSON.stringify("")).subscribe(result => { this.Users = result; this.loading = false; });
+      this.dataService.post<User>(Controllers.Products.DeleteProduct, Product).subscribe(result => {
+        this.dataService.post<Product[]>(Controllers.Products.GetProducts, JSON.stringify("")).subscribe(result => { this.Products = result; this.loading = false; });
       });
     }
   }
 
   SearchWord() {
     this.loading = true;
-    this.dataService.post<User[]>(Controllers.User.GetUsers, JSON.stringify((this.Search.trim() != "") ? this.Search : "")).subscribe(result => { this.Users = result; this.loading = false });
+    this.dataService.post<Product[]>(Controllers.Products.GetProducts, JSON.stringify((this.Search.trim() != "") ? this.Search : "")).subscribe(result => { this.Products = result; this.loading = false });
   }
 }

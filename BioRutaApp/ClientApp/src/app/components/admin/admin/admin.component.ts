@@ -33,7 +33,7 @@ export class AdminComponent {
 
 
   DeleteUser(User: User){
-    if(confirm(`¿Seguro desea eliminar el registro ${User.Name}?`)){
+    if(confirm(`¿Seguro desea inhabilitar el registro ${User.Name}?`)){
       this.loading = true;
       this.dataService.post<User>(Controllers.User.DeleteUser, User).subscribe(result => {
         this.dataService.post<User[]>(Controllers.User.GetUsers, JSON.stringify("")).subscribe(result => { this.Users = result; this.loading = false;});

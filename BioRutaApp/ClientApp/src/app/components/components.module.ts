@@ -7,6 +7,7 @@ import { RegistroUsuarioComponent } from './auth/registro-usuario/registro-usuar
 import { AdminComponent } from './admin/admin/admin.component';
 import { EditUserComponent } from './admin/edit-user/edit-user.component';
 import { ListProductsComponent } from './admin-products/list-products/list-products.component';
+import { EditProductComponent } from './admin-products/edit-product/edit-product.component';
 
 
 
@@ -16,7 +17,8 @@ import { ListProductsComponent } from './admin-products/list-products/list-produ
     RegistroUsuarioComponent,
     AdminComponent,
     EditUserComponent,
-    ListProductsComponent
+    ListProductsComponent,
+    EditProductComponent
   ],
   imports: [
     CommonModule,

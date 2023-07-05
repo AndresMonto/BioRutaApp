@@ -58,7 +58,7 @@ export class EditUserComponent {
       this.User.Error = false;
       this.loading = true;
 
-      var url = this.edit ? Controllers.User.Update : Controllers.User.CreateUser ;
+      var url = this.edit ? Controllers.User.UpdateUser : Controllers.User.CreateUser ;
 
       this.dataService.post<User>(url,this.User).subscribe({
         next: (v) => {

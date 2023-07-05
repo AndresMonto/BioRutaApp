@@ -3,9 +3,9 @@
   <div class="page-block">
     <div class="row align-items-center">
       <div class="col-md-12">
-        <div class="page-header-title">
+        <!-- <div class="page-header-title">
           <h5 class="m-b-10">BioRuta</h5>
-        </div>
+        </div> -->
         <ul class="breadcrumb">
           <li class="breadcrumb-item"><a (click)="Home()"><i class="feather icon-home"></i></a></li>
           <li class="breadcrumb-item"><a (click)="Admin()">Administración</a></li>
@@ -74,7 +74,7 @@
 
         </div>
 
-        <div *ngIf="(!formEdit.valid || User.Role.Id == 0) || (!edit && User.Password.length < minLength)"><p class="text-danger text-center">*Debe ingresar un Correo Válido, un Nombre de Usuario {{edit ? " y Contraseña " : "" }} {{minLength}} de almenos caracteres, y un Rol</p></div>
+        <div *ngIf="(!formEdit.valid || User.Role.Id == 0) || (!edit && User.Password.length < minLength)"><p class="text-danger text-center">*Debe ingresar un Correo Válido, un Nombre de Usuario {{edit ? " y Contraseña " : "" }} de almenos {{minLength}} caracteres, y un Rol</p></div>
           <div><p class="text-danger text-center" *ngIf="User.Error">{{User.Message}}</p></div>
 
           <div class="d-flex justify-content-center"  *ngIf="loading">
