@@ -38,6 +38,7 @@ export class EditCollectsComponent {
       StateName:['StateName', [Validators.required, Validators.minLength(this.minLength)]],
       Addres:['Addres', [Validators.required, Validators.minLength(this.minLength)]],
       CollecterName:['CollecterName', [Validators.required, Validators.minLength(this.minLength)]],
+      ObservationCli:['ObservationCli', [Validators.required, Validators.minLength(this.minLength)]],
     });
   }
 
